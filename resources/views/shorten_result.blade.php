@@ -13,7 +13,7 @@
     </div>
 </div>
 <a id="generate-qr-code" class='btn btn-primary'>Generate QR Code</a>
-<a href='{{route('index')}}' class='btn btn-info'>Shorten another</a>
+<a href='{{route('admin')}}' class='btn btn-info'>Shorten another</a>
 
 <div class="qr-code-container"></div>
 

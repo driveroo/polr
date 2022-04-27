@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Helpers\UserHelper;
 use Illuminate\Http\Request;
 use Illuminate\Http\Redirect;
 
@@ -17,7 +18,7 @@ class LinkController extends Controller {
      */
 
     private function renderError($message) {
-        return redirect(route('index'))->with('error', $message);
+        return redirect(route('login'))->with('error', $message);
     }
 
     public function performShorten(Request $request) {
@@ -44,7 +45,21 @@ class LinkController extends Controller {
             return self::renderError($e->getMessage());
         }
 
-        return view('shorten_result', ['short_url' => $short_url]);
+        $username = session('username');
+        $role = session('role');
+
+        $user = UserHelper::getUserByUsername($username);
+
+        return view('admin', [
+            'role' => $role,
+            'admin_role' => UserHelper::$USER_ROLES['admin'],
+            'user_roles' => UserHelper::$USER_ROLES,
+            'api_key' => $user->api_key,
+            'api_active' => $user->api_active,
+            'api_quota' => $user->api_quota,
+            'user_id' => $user->id,
+            'short_url' => $short_url
+        ]);
     }
 
     public function performRedirect(Request $request, $short_url, $secret_key=false) {

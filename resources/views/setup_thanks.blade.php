@@ -23,7 +23,7 @@ Setup Completed
         </div>
         <h2>Setup Complete</h2>
         <p>Your Polr setup is complete. To continue, you may <a href='{{route('login')}}'>login</a> or
-            access your <a href='{{route('index')}}'>home page</a>.
+            access your <a href='{{route('login')}}'>home page</a>.
         </p>
         <p>Consider taking a look at the <a href='http://docs.polr.me/'>docs</a> or <a href='//github.com/cydrobolt/polr'>README</a>
             for assistance.

@@ -31,7 +31,7 @@ class UserController extends Controller {
     public function performLogoutUser(Request $request) {
         $request->session()->forget('username');
         $request->session()->forget('role');
-        return redirect()->route('index');
+        return redirect()->route('login');
     }
 
     public function performLogin(Request $request) {
@@ -46,7 +46,7 @@ class UserController extends Controller {
             $request->session()->put('username', $username);
             $request->session()->put('role', $role);
 
-            return redirect()->route('index');
+            return redirect()->route('admin');
         }
         else {
             return redirect('login')->with('error', 'Invalid password or inactivated account. Try again.');
@@ -55,7 +55,7 @@ class UserController extends Controller {
 
     public function performSignup(Request $request) {
         if (env('POLR_ALLOW_ACCT_CREATION') == false) {
-            return redirect(route('index'))->with('error', 'Sorry, but registration is disabled.');
+            return redirect(route('login'))->with('error', 'Sorry, but registration is disabled.');
         }
 
         if (env('POLR_ACCT_CREATION_RECAPTCHA')) {
@@ -139,7 +139,7 @@ class UserController extends Controller {
 
     public function performSendPasswordResetCode(Request $request) {
         if (!env('SETTING_PASSWORD_RECOV')) {
-            return redirect(route('index'))->with('error', 'Password recovery is disabled.');
+            return redirect(route('login'))->with('error', 'Password recovery is disabled.');
         }
 
         $email = $request->input('email');
@@ -160,7 +160,7 @@ class UserController extends Controller {
             $m->to($user->email, $user->username)->subject(env('APP_NAME') . ' Password Reset');
         });
 
-        return redirect(route('index'))->with('success', 'Password reset email sent. Check your inbox for details.');
+        return redirect(route('login'))->with('success', 'Password reset email sent. Check your inbox for details.');
     }
 
     public function performActivation(Request $request, $username, $recovery_key) {
@@ -176,7 +176,7 @@ class UserController extends Controller {
             return redirect(route('login'))->with('success', 'Account activated. You may now login.');
         }
         else {
-            return redirect(route('index'))->with('error', 'Username or activation key incorrect.');
+            return redirect(route('login'))->with('error', 'Username or activation key incorrect.');
         }
     }
 
@@ -198,7 +198,7 @@ class UserController extends Controller {
             return redirect(route('login'))->with('success', 'Password reset. You may now login.');
         }
         else {
-            return redirect(route('index'))->with('error', 'Username or reset key incorrect.');
+            return redirect(route('login'))->with('error', 'Username or reset key incorrect.');
         }
 
     }

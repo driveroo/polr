@@ -25,7 +25,7 @@ class AdminController extends Controller {
         $user = UserHelper::getUserByUsername($username);
 
         if (!$user) {
-            return redirect(route('index'))->with('error', 'Invalid or disabled account.');
+            return redirect(route('login'))->with('error', 'Invalid or disabled account.');
         }
 
         return view('admin', [
