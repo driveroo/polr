@@ -31,7 +31,7 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane {{ isset($short_url) ? '' : 'active' }}" id="create">
 
-                <form method='POST' action='/admin' role='form'>
+                <form method='POST' action='{{ route('admin') }}' role='form'>
                     <input type='url' autocomplete='off'
                            class='form-control long-link-input' placeholder='http://' name='link-url' />
 
@@ -93,7 +93,7 @@
 
             <div role="tabpanel" class="tab-pane" id="settings">
                 <h3>Change Password</h3>
-                <form action='/admin/action/change_password' method='POST'>
+                <form action='{{ route('change_password') }}' method='POST'>
                     Old Password: <input class="form-control password-box" type='password' name='current_password' />
                     New Password: <input class="form-control password-box" type='password' name='new_password' />
                     <input type="hidden" name='_token' value='{{csrf_token()}}' />

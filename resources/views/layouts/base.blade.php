@@ -22,6 +22,10 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
     @yield('css')
+    <script>
+        @if($prefix = explode('/', env('APP_ADDRESS'), 2)[1] ?? '') @endif
+        const BASE_API_PATH = '{{ $prefix ? "/$prefix" : '' }}/api/v2/';
+    </script>
 </head>
 <body>
     @include('snippets.navbar')

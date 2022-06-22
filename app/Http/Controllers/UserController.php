@@ -31,7 +31,7 @@ class UserController extends Controller {
     public function performLogoutUser(Request $request) {
         $request->session()->forget('username');
         $request->session()->forget('role');
-        return redirect()->route('login');
+        return redirect('login');;
     }
 
     public function performLogin(Request $request) {
@@ -46,7 +46,7 @@ class UserController extends Controller {
             $request->session()->put('username', $username);
             $request->session()->put('role', $role);
 
-            return redirect()->route('admin');
+            return redirect('admin');
         }
         else {
             return redirect('login')->with('error', 'Invalid password or inactivated account. Try again.');

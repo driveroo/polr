@@ -39,7 +39,7 @@
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                     <div class="dropdown-menu pull-right login-dropdown-menu" id="dropdown">
                         <h2>Login</h2>
-                        <form action="login" method="POST" accept-charset="UTF-8">
+                        <form action="{{ route('login') }}" method="POST" accept-charset="UTF-8">
                             <input type="text" name="username" placeholder='Username' size="30" class="form-control login-form-field" />
                             <input type="password" name="password" placeholder='Password' size="30" class="form-control login-form-field" />
                             <input type="hidden" name='_token' value='{{csrf_token()}}' />
