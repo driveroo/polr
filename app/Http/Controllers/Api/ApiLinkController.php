@@ -26,7 +26,7 @@ class ApiLinkController extends ApiController {
         $validator = \Validator::make(array_merge([
             'url' => str_replace(' ', '%20', $request->input('url'))
         ], $request->except('url')), [
-            'url' => 'required|url'
+            'url' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -67,7 +67,7 @@ class ApiLinkController extends ApiController {
 
         foreach ($links_array as $link) {
             $validator = \Validator::make($link, [
-                'url' => 'required|url'
+                'url' => 'required'
             ]);
 
             if ($validator->fails()) {
