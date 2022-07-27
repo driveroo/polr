@@ -294,8 +294,8 @@ Setup
 @endsection
 
 @section('js')
-<script src="/js/bootstrap.min.js"></script>
-<script src='/js/angular.min.js'></script>
-<script src='/js/base.js'></script>
-<script src='/js/SetupCtrl.js'></script>
+<script src="{{ env('APP_ADDRESS') }}/js/bootstrap.min.js"></script>
+<script src='{{ env('APP_ADDRESS') }}/js/angular.min.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/base.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/SetupCtrl.js'></script>
 @endsection

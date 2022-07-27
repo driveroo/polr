@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('css')
-<link rel='stylesheet' href='css/index.css' />
+<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/index.css' />
 @endsection
 
 @section('content')
@@ -48,5 +48,5 @@
 @endsection
 
 @section('js')
-<script src='js/index.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/index.js'></script>
 @endsection

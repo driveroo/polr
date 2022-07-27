@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('css')
-<link rel='stylesheet' href='/css/reset_password.css' />
+<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/reset_password.css' />
 @endsection
 
 @section('content')
@@ -19,5 +19,5 @@
 @endsection
 
 @section('js')
-<script src='/js/reset_password.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/reset_password.js'></script>
 @endsection

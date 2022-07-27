@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('css')
-<link rel='stylesheet' href='css/login.css' />
+<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/login.css' />
 @endsection
 
 @section('content')

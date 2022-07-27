@@ -1,10 +1,10 @@
 @extends('layouts.base')
 
 @section('css')
-<link rel='stylesheet' href='/css/datatables.min.css'>
-<link rel='stylesheet' href='/css/stats.css'>
-<link rel='stylesheet' href='/css/jquery-jvectormap.css'>
-<link rel='stylesheet' href='/css/bootstrap-datetimepicker.min.css'>
+<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/datatables.min.css'>
+<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/stats.css'>
+<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/jquery-jvectormap.css'>
+<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/bootstrap-datetimepicker.min.css'>
 @endsection
 
 @section('content')
@@ -108,12 +108,12 @@ var datePickerRightBound = '{{ $right_bound }}';
 </script>
 
 {{-- Include extra JS --}}
-<script src='/js/lodash.min.js'></script>
-<script src='/js/chart.bundle.min.js'></script>
-<script src='/js/datatables.min.js'></script>
-<script src='/js/jquery-jvectormap.min.js'></script>
-<script src='/js/jquery-jvectormap-world-mill.js'></script>
-<script src='/js/moment.min.js'></script>
-<script src='/js/bootstrap-datetimepicker.min.js'></script>
-<script src='/js/StatsCtrl.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/lodash.min.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/chart.bundle.min.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/datatables.min.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/jquery-jvectormap.min.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/jquery-jvectormap-world-mill.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/moment.min.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/bootstrap-datetimepicker.min.js'></script>
+<script src='{{ env('APP_ADDRESS') }}/js/StatsCtrl.js'></script>
 @endsection
