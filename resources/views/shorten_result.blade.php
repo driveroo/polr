@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('css')
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/shorten_result.css' />
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/shorten_result.css' />
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@
 
 
 @section('js')
-<script src='{{ env('APP_ADDRESS') }}/js/qrcode.min.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/clipboard.min.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/shorten_result.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/qrcode.min.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/clipboard.min.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/shorten_result.js'></script>
 @endsection

@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             @yield('content')
         </div>
 
-        <script src="{{ env('APP_ADDRESS') }}/js/jquery-1.11.3.min.js"></script>
+        <script src="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/jquery-1.11.3.min.js"></script>
         @yield('js')
     </body>
 </html>

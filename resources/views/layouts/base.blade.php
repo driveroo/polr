@@ -13,14 +13,14 @@
     @if (env('APP_STYLESHEET'))
     <link rel="stylesheet" href="{{env('APP_STYLESHEET')}}">
     @else
-    <link rel="stylesheet" href="{{ env('APP_ADDRESS') }}/css/default-bootstrap.min.css">
+    <link rel="stylesheet" href="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/default-bootstrap.min.css">
     @endif
 
-    <link href="{{ env('APP_ADDRESS') }}/css/base.css" rel="stylesheet">
-    <link href="{{ env('APP_ADDRESS') }}/css/toastr.min.css" rel="stylesheet">
-    <link href="{{ env('APP_ADDRESS') }}/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/base.css" rel="stylesheet">
+    <link href="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/toastr.min.css" rel="stylesheet">
+    <link href="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="{{ env('APP_ADDRESS') }}/favicon.ico">
+    <link rel="shortcut icon" href="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/favicon.ico">
     @yield('css')
     <script>
         @if($prefix = explode('/', env('APP_ADDRESS'), 2)[1] ?? '') @endif
@@ -36,12 +36,12 @@
     </div>
 
     {{-- Load JavaScript dependencies --}}
-    <script src="{{ env('APP_ADDRESS') }}/js/constants.js"></script>
-    <script src="{{ env('APP_ADDRESS') }}/js/jquery-1.11.3.min.js"></script>
-    <script src="{{ env('APP_ADDRESS') }}/js/bootstrap.min.js"></script>
-    <script src="{{ env('APP_ADDRESS') }}/js/angular.min.js"></script>
-    <script src="{{ env('APP_ADDRESS') }}/js/toastr.min.js"></script>
-    <script src="{{ env('APP_ADDRESS') }}/js/base.js"></script>
+    <script src="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/constants.js"></script>
+    <script src="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/jquery-1.11.3.min.js"></script>
+    <script src="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/bootstrap.min.js"></script>
+    <script src="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/angular.min.js"></script>
+    <script src="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/toastr.min.js"></script>
+    <script src="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/base.js"></script>
 
     <script>
     @if (Session::has('info'))

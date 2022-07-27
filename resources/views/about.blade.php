@@ -1,8 +1,8 @@
 @extends('layouts.base')
 
 @section('css')
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/about.css' />
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/effects.css' />
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/about.css' />
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/effects.css' />
 @endsection
 
 @section('content')

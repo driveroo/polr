@@ -5,8 +5,8 @@ Setup Completed
 @endsection
 
 @section('css')
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/default-bootstrap.min.css'>
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/setup.css'>
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/default-bootstrap.min.css'>
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/setup.css'>
 @endsection
 
 @section('content')

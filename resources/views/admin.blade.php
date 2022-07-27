@@ -1,9 +1,9 @@
 @extends('layouts.base')
 
 @section('css')
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/admin.css'>
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/datatables.min.css'>
-<link rel='stylesheet' href='{{ env('APP_ADDRESS') }}/css/index.css' />
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/admin.css'>
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/datatables.min.css'>
+<link rel='stylesheet' href='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/css/index.css' />
 {{-- <link rel='stylesheet' href='/css/shorten_result.css' /> --}}
 @endsection
 
@@ -197,11 +197,11 @@
 @include('snippets.modals')
 
 {{-- Include extra JS --}}
-<script src='{{ env('APP_ADDRESS') }}/js/datatables.min.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/api.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/AdminCtrl.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/index.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/qrcode.min.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/clipboard.min.js'></script>
-<script src='{{ env('APP_ADDRESS') }}/js/shorten_result.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/datatables.min.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/api.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/AdminCtrl.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/index.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/qrcode.min.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/clipboard.min.js'></script>
+<script src='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/js/shorten_result.js'></script>
 @endsection
