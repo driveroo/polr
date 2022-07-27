@@ -31,7 +31,7 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane {{ isset($short_url) ? '' : 'active' }}" id="create">
 
-                <form method='POST' action='{{ route('admin') }}' role='form'>
+                <form method='POST' action='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/admin' role='form'>
                     <input type='url' autocomplete='off'
                            class='form-control long-link-input' placeholder='http://' name='link-url' />
 

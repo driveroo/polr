@@ -29,7 +29,7 @@
                 </p> --}}
             </div>
             <div class="col-md-3">
-                <form action="/" method="GET">
+                <form action="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/" method="GET">
                     <div class="form-group">
                         <div class='input-group date' id='left-bound-picker'>
                             <input type="text" class="form-control" name="left_bound">

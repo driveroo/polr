@@ -22,7 +22,7 @@ Setup
             <img class='setup-logo' src='/img/logo.png'>
         </div>
 
-        <form class='setup-form' method='POST' action='setup'>
+        <form class='setup-form' method='POST' action='{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/setup'>
             <h4>Database Configuration</h4>
 
             <p>Database Host:</p>

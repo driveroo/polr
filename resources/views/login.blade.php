@@ -9,7 +9,7 @@
     <h1>Login</h1><br/><br/>
     <div class="col-md-3"></div>
     <div class="col-md-6">
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ env('APP_PROTOCOL') . env('APP_ADDRESS') }}/login" method="POST">
             <input type="text" placeholder="username" name="username" class="form-control login-field" />
             <input type="password" placeholder="password" name="password" class="form-control login-field" />
             <input type="hidden" name='_token' value='{{csrf_token()}}' />
