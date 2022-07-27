@@ -18,6 +18,8 @@ class AppServiceProvider extends ServiceProvider
         $property = $reflectionClass->getProperty('cachedRoot');
         $property->setAccessible(true);
         $property->setValue($url, $rootUrl);
+
+        \Illuminate\Support\Facades\URL::forceSchema('https');
     }
 
     /**
@@ -27,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        \Illuminate\Support\Facades\URL::forceSchema('https');
     }
 }
